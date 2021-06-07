@@ -1,0 +1,9 @@
+meme model
+
+has_many :meme_references - like more memes within itself that it refers too
+:image - string url, :title - string, description - string
+
+meme_references
+belongs_to :meme
+
+:meme_id - integer, :name - string,
