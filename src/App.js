@@ -1,6 +1,12 @@
 import React from 'react';
-
+import { connect } from 'react-redux'
+import {fetchMemes} from './actions/fetchMemes'
 class App extends React.Component {
+    
+    componentDidMount(){
+        this.props.fetchMemes({type: 'FETCH_MEMES', payload: {title: 'best meme'}})
+    }
+   
     
 
     render(){
@@ -11,4 +17,6 @@ class App extends React.Component {
 
 }
 
-export default App;
+
+
+export default connect(null, { fetchMemes })(App);
