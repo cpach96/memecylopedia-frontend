@@ -1,16 +1,16 @@
-export const addMeme = (formData) => {
+export const editMeme = (formData) => {
+    
     return (dispatch) => {
-        dispatch({ type: 'START_ADDING_MEMES_REQUEST '});
-        fetch('http://localhost:3001/api/v1/memes',{
+        fetch(`http://localhost:3001/api/v1/memes/${formData.id}`,{
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             },
-            method: 'POST',
+            method: 'PATCH',
             body: JSON.stringify(formData)
         })
         .then(response => response.json())
-        .then(meme => dispatch({type: 'ADD_MEME', payload: meme}))
+        .then(meme => dispatch({type: 'EDIT_MEME', payload: meme}))
         
     }
 

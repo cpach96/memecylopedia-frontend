@@ -20,6 +20,11 @@ class MemeInput extends React.Component{
     handleSubmit = (event) => {
         event.preventDefault()
         this.props.addMeme(this.state)
+        this.setState({
+            title: '',
+            image: '',
+            description: ''
+        })
     }
 
     render(){

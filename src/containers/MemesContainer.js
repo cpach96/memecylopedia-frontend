@@ -1,8 +1,10 @@
 import React from 'react'
 import Memes from '../components/Memes'
-import MemeInput from '../components/MemeInput'
+import MemeInput from './MemeInput'
 import { connect } from 'react-redux'
 import { fetchMemes } from '../actions/fetchMemes'
+import { Route, Switch} from 'react-router-dom'
+import Meme from '../components/Meme'
 
 
 
@@ -16,10 +18,13 @@ class MemesContainer extends React.Component {
     render() {
 
         return(
+            <Switch>
             <div>
-                <MemeInput/>
-                <Memes memes={this.props.memes}/>
+                <Route exact path='/memes/new' component={MemeInput}/>
+                <Route path ='/memes/:id' render={(routerProps) => <Meme {...routerProps} memes={this.props.memes}/> } />
+                <Route exact path='/memes' render={(routerProps) => <Memes {...routerProps} memes={this.props.memes}/> } />
             </div>
+            </Switch>
         )
     }
 
@@ -32,3 +37,5 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps, { fetchMemes })(MemesContainer)
+
+//add return link on meme show page

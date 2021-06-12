@@ -1,0 +1,33 @@
+body{
+    background-color:rgb(120, 184, 25)
+}
+
+h1{
+    background-color: cornsilk;
+    color:black;
+    text-align: center;
+}
+
+h2{
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+h3{
+    background-color: magenta;
+    color: wheat;
+    text-align: center;
+}
+
+img{
+    width: 500px;
+    height:600px;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
