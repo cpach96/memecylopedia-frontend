@@ -8,7 +8,6 @@ import { deleteMeme } from '../actions/deleteMeme'
 const Memes = (props) => {
 
     const handleDelete = (meme) =>{
-        
         props.deleteMeme(meme.id)
     }
 

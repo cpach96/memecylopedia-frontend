@@ -1,6 +1,7 @@
 import React from 'react'
 import Memes from '../components/Memes'
 import MemeInput from './MemeInput'
+import MemeEdit from './MemeEdit'
 import { connect } from 'react-redux'
 import { fetchMemes } from '../actions/fetchMemes'
 import { Route, Switch} from 'react-router-dom'
@@ -21,6 +22,7 @@ class MemesContainer extends React.Component {
             <Switch>
             <div>
                 <Route exact path='/memes/new' component={MemeInput}/>
+                <Route exact path='/memes/edit' component={MemeEdit}/>
                 <Route path ='/memes/:id' render={(routerProps) => <Meme {...routerProps} memes={this.props.memes}/> } />
                 <Route exact path='/memes' render={(routerProps) => <Memes {...routerProps} memes={this.props.memes}/> } />
             </div>

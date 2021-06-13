@@ -11,6 +11,7 @@ export default function memeReducer(state = { memes: [], requesting: false }, ac
             }  
 
         case 'ADD_MEME':
+            
             return {...state, memes: [...state.memes, action.payload], requesting: false}
         
 
